@@ -8,15 +8,27 @@ export default function AccountPage() {
 
     const navigate = useNavigate();
 
+    async function AddCard(){
+
+    }
+
+    async function PaymentHistory() {
+
+    }
+
     return (
         <>
             <h1>Welcome Back to Scoops!!!!!</h1>
-            <Link to="/order">
-                <button>Place an Order</button>
-            </Link>
-            <button onClick={() => navigate("/update")}>Update Account</button>
-
-            <button onClick={() => navigate("/history")}>View Past Orders</button>
+                <div>
+                    <button>Place an Order</button><br /><br />
+                    <button onClick={AddCard}>View Cards</button>
+                </div>
+                <div>
+                <button onClick={AddCard}>Add a Card</button>
+                </div>
+                <div>
+                <button onClick={PaymentHistory}>View Past Orders</button>
+                </div>
         </>
 
     );

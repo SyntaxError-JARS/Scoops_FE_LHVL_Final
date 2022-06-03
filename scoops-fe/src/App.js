@@ -6,6 +6,7 @@ import Adminpage from "./Components/scoops/admin/admin-homepage";
 import Accountpage from "./Components/scoops/customer/customer-accountpage";
 import CustomerLogin from "./Components/scoops/customer/customer-login";
 import CustomerRegister from "./Components/scoops/customer/customer-register";
+import Menu from "./Components/scoops/menu";
 
 export const userContext = createContext();
 
@@ -23,6 +24,7 @@ function App() {
                         <Route exact path="" element={<Homepage />} />
                         <Route path="accountpage" element={<Accountpage />} />
                         <Route path="adminpage" element={<Adminpage />} />
+                        <Route path="menu" element={<Menu />} />
                         {/* <Route path="update" element={<TrainerUpdate></TrainerUpdate>} /> */}
                     </Routes>
                 </userContext.Provider>

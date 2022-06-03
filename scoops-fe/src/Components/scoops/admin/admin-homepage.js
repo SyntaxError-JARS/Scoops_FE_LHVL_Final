@@ -10,7 +10,7 @@ export default function Adminpage() {
 
     return (
         <>
-            <h1>Hello Scoops Administor!!!!!</h1>
+            <h1 >Hello Scoops Administor!!!!!</h1>
             <Link to="/admin">
             </Link>
             <button onClick={() => navigate("/adminupdate")}>Update Menu</button>

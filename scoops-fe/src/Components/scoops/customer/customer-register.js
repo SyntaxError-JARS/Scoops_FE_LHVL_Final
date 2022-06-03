@@ -22,12 +22,12 @@ export default function CustomerRegister() {
         // Whenever you are getting a useRefs value, make sure it's inside some function call. Otherwise it will
         // error due to the refInput.current = undefined, meaning there is no .value available
         const user = {
-            fname: fnameInput.current.value,
-            lname: lnameInput.current.value,
+            fName: fnameInput.current.value,
+            lName: lnameInput.current.value,
             username: usernameInput.current.value,
             password: passwordInput.current.value,
-            balance: 0,
-            isadmin: 0,
+            balance: "0",
+            isAdmin: "0",
         };
         console.log(user);
         try {
@@ -37,11 +37,12 @@ export default function CustomerRegister() {
             console.error(error.response.data);
             alert(error.response.data);
         }
+        window.location.reload(false);
     }
 
     return (
         <>
-            <h4>Hello, new trainer please register below.</h4>
+            <h4>Hello, new customer please register below.</h4>
             <input placeholder="Enter First Name" ref={fnameInput}></input>
             <input placeholder="Enter Last Name" ref={lnameInput}></input>
             <br></br>
