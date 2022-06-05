@@ -19,10 +19,6 @@ export default function NavBar() {
             <Link to="/menu">
                 <button>Menu</button>
             </Link>
-            <span> </span>
-            <Link to="/order">
-                <button>Order Ice Cream</button>
-            </Link>
         </nav>
     );
 }

@@ -13,8 +13,9 @@ export default function Adminpage() {
             <h1 >Hello Scoops Administor!!!!!</h1>
             <Link to="/admin">
             </Link>
-            <button onClick={() => navigate("/adminupdate")}>Update Menu</button>
-
+            <div>
+            {/* <button onClick={PaymentHistory}>View Past Orders</button> */}
+            </div>
 
         </>
 
