@@ -7,6 +7,9 @@ export default function AccountPage() {
     const scoopInput = useRef();
     const flavorInput = useRef();
     const cardInput = useRef();
+    const updateFirstName = useRef();
+    const updateLastName = useRef();
+    const updatePassword = useRef();
     const [user, setUser] = useContext(userContext);
     console.log(user);
     const [menuBody, setMenuBody] = useState([]);
@@ -117,6 +120,25 @@ export default function AccountPage() {
             console.error(e);
         }
     }
+    async function updateAccount(){
+        const customerUpdated = {
+            username: user.username,
+            fName: updateFirstName.current.value,
+            lName: updateLastName.current.value,
+            password: updatePassword.current.value,
+            balance: 0,
+            isAdmin: 0
+        }
+
+            try {
+                const response = await axios.put(`${url}/customers`, customerUpdated);
+                console.log(response.data);
+            } catch (error) {
+                console.error(error.response.data);
+                alert(error.response.data);
+            }
+            window.location.reload(false);
+        }
     
 
     return (
@@ -153,6 +175,14 @@ export default function AccountPage() {
                 </thead>
                 <tbody>{orderBody}</tbody>
             </table>
+            <h3>Update/Change Account Info</h3>
+                <div>
+                <input placeholder="First Name" ref={updateFirstName}></input>
+                <input placeholder="Last Name" ref={updateLastName}></input>
+                <input placeholder="Password" ref={updatePassword}></input>
+
+                    <button onClick={updateAccount}>Buy Some Ice Cream</button><br />
+                </div>
 
         </>
 
